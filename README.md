@@ -2,7 +2,7 @@
 
 <!-- Title -->
 <p align="center">
-<img src="/media/decompileIcon.png?token=AIS75FF2PQL2O7C5P5MIYDDABQ7MM" alt="icon" width="150"/>
+<img src="/media/decompileIcon.png" alt="icon" width="150"/>
 </p>
 
 **DOES NOT SUPPORT ENCRYPTED/BINARY (FACEBOOK, INSTAGRAM) BUNDLES**
@@ -53,6 +53,22 @@ Command params:
 - `--agressiveCache` - skips some cache checks at the expense of possible cache desync
 - `--noProgress` - don't show progress bar
 - `--debug` - when also given a module ID, will print out that modules code after any plugin handles the app.
+
+## Extract index.android.bundle from APK
+
+### For Macbook
+```
+brew install apktool
+```
+after install `apktool`, unzip apk file by run this command on terminal like this:
+
+```
+apktool  d /pathOfApkFile.apk
+```
+
+After that you will get `index.android.bundle` file at `pathOfApkFile/assets/index.android.bundle`
+
+than you can use `react-native-decompiler` for decompile `index.android.bundle` file
 
 ## Valid inputs
 
