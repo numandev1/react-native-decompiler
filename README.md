@@ -56,10 +56,22 @@ Command params:
 
 ## Extract index.android.bundle from APK
 
-### For Macbook
+### installation of apktool
+
+#### For Macbook
 ```
 brew install apktool
 ```
+
+#### For Linux
+```
+apt-get install -y apktool
+```
+
+#### For Window
+
+you can read installion step for window [DOCS](https://ibotpeaches.github.io/Apktool/install/ "DOCS")
+
 after install `apktool`, unzip apk file by run this command on terminal like this:
 
 ```

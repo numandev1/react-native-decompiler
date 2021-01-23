@@ -1,7 +1,7 @@
 {
   "name": "react-native-decompiler",
-  "version": "0.1.10",
-  "description": "",
+  "version": "0.1.11",
+  "description": "react native decompile apk and ipa(soon)",
   "main": "./out/index.js",
   "author": "nomi9995",
   "license": "MIT",
