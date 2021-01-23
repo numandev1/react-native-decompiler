@@ -1,4 +1,4 @@
-
+#!/usr/bin/env node
 
 import fsExtra from 'fs-extra';
 import { performance } from 'perf_hooks';

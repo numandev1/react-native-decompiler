@@ -1,6 +1,6 @@
 {
   "name": "react-native-decompiler",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "",
   "main": "./out/index.js",
   "author": "nomi9995",
@@ -57,5 +57,13 @@
   "homepage": "https://github.com/nomi9995/react-native-decompiler#readme",
   "contributors": [
     "Numan <muhammadnuman70@gmail.com> (https://github.com/nomi9995)"
+  ],
+  "keywords": [
+    "react-native",
+    "android",
+    "decompile",
+    "decompiler",
+    "index.android.bundle",
+    "apk"
   ]
 }
