@@ -1,18 +1,40 @@
 # React Native Decompiler [ALPHA]
 
+<!-- Title -->
+<p align="center">
+<img src="/media/boilerplateIcon.png" alt="alt text" width="150"/>
+</p>
+
 **DOES NOT SUPPORT ENCRYPTED/BINARY (FACEBOOK, INSTAGRAM) BUNDLES**
 
 Decompiles React Native `index.android.bundle` JS files. Webpack files too!
 
 Also tries to remove some compilation artifacts (via internal plugins, ESLint, and Prettier) to make it easier to read.
 
+<!-- Body -->
+
+### using npx
+```sh
+npx react-native-decompiler
+```
+
+
+### using npm
+```sh
+npm i -g react-native-decompiler
+```
+
+```sh
+react-native-decompiler
+
+# or you can write blow command
+
+rnd
+```
+
 # Usage
-
-1. Download
-2. `npm i`
-3. Build or use ts-node (your choice).
-
-Example command: `node ./out/main.js -i index.android.bundle -o ./output`, `ts-node ./src/main.js -i index.android.bundle -o ./output`
+Example 1: `react-native-decompiler -i ./index.android.bundle -o ./output`
+Example 2: `rnd -i ./index.android.bundle -o ./output`
 
 Command params:
 - `-i` (required) - input file/folder
@@ -55,3 +77,28 @@ Guidelines:
 
 * When doing any modifications to the AST, use the NodePath methods.
 * When you are only doing reading, directly reading from `.node` is acceptable.
+
+<!-- Footer -->
+
+## Contributors ✨
+
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/nomi9995"><img src="https://avatars2.githubusercontent.com/u/36044436?v=4" width="100px;" alt=""/><br /><sub><b>Numan</b></sub></a><br /><a href="https://github.com/nomi9995/react-native-decompiler/commits?author=nomi9995" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
