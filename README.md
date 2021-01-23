@@ -34,6 +34,7 @@ rnd
 
 # Usage
 Example 1: `react-native-decompiler -i ./index.android.bundle -o ./output`
+
 Example 2: `rnd -i ./index.android.bundle -o ./output`
 
 Command params:
