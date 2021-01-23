@@ -20,7 +20,7 @@
     "command-line-args": "^5.0.2",
     "debug": "^4.3.1",
     "eslint": "^7.16.0",
-    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react": "^7.22.0",
     "fs-extra": "^9.0.1",
     "prettier": "^2.2.1"
   },
