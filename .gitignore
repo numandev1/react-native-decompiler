@@ -7,3 +7,4 @@ out
 js-modules
 nodemon.json
 yarn.lock
+package-lock.json
