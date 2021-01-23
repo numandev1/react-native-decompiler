@@ -1,0 +1,24 @@
+diff --git a/node_modules/@types/command-line-args/index.d.ts b/node_modules/@types/command-line-args/index.d.ts
+index f6a718c..03b9e9b 100644
+--- a/node_modules/@types/command-line-args/index.d.ts
++++ b/node_modules/@types/command-line-args/index.d.ts
+@@ -8,16 +8,15 @@
+  * Returns an object containing option values parsed from the command line. By default it parses the global `process.argv` array.
+  * Parsing is strict by default. To be more permissive, enable `partial` or `stopAtFirstUnknown` modes.
+  */
+-declare function commandLineArgs(optionDefinitions: commandLineArgs.OptionDefinition[], options?: commandLineArgs.ParseOptions): commandLineArgs.CommandLineOptions;
++declare function commandLineArgs<T>(optionDefinitions: commandLineArgs.OptionDefinition[], options?: commandLineArgs.ParseOptions): commandLineArgs.CommandLineOptions<T>;
+ 
+ declare namespace commandLineArgs {
+-    interface CommandLineOptions {
++    type CommandLineOptions<T = {}> = {
+         /**
+          * Command-line arguments not parsed by `commandLineArgs`.
+          */
+         _unknown?: string[];
+-        [propName: string]: any;
+-    }
++    } & T;
+ 
+     interface ParseOptions {
+         /**

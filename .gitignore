@@ -1,0 +1,9 @@
+output*
+.vscode
+node_modules
+*.bundle*
+run*.*
+out
+js-modules
+nodemon.json
+yarn.lock

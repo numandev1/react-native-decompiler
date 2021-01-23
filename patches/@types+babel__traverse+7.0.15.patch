@@ -1,0 +1,31 @@
+diff --git a/node_modules/@types/babel__traverse/index.d.ts b/node_modules/@types/babel__traverse/index.d.ts
+index 827bae1..1101116 100644
+--- a/node_modules/@types/babel__traverse/index.d.ts
++++ b/node_modules/@types/babel__traverse/index.d.ts
+@@ -108,6 +108,8 @@ export class Scope {
+ 
+     checkBlockScopedCollisions(local: Node, kind: string, name: string, id: object): void;
+ 
++    crawl(): void;
++
+     rename(oldName: string, newName?: string, block?: Node): void;
+ 
+     dump(): void;
+@@ -529,6 +531,8 @@ export class NodePath<T = Node> {
+     getCompletionRecords(): NodePath[];
+ 
+     getSibling(key: string | number): NodePath;
++    getPrevSibling(): NodePath;
++    getNextSibling(): NodePath;
+     getAllPrevSiblings(): NodePath[];
+     getAllNextSiblings(): NodePath[];
+ 
+@@ -540,7 +544,7 @@ export class NodePath<T = Node> {
+         : T[K] extends Node | null | undefined
+         ? NodePath<T[K]>
+         : never;
+-    get(key: string, context?: boolean | TraversalContext): NodePath | NodePath[];
++    // get(key: string, context?: boolean | TraversalContext): NodePath | NodePath[];
+ 
+     getBindingIdentifiers(duplicates?: boolean): Node[];
+ 

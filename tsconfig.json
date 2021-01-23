@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES2018",
+    "noImplicitAny": true,
+    "strict": true,
+    "allowJs": false,
+    "strictNullChecks": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "inlineSourceMap": true,
+    "esModuleInterop": true,
+    "incremental": true,
+    "outDir": "out"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "output",
+    "**/*.spec.ts",
+    "**/*.js",
+    "**/*.android.bundle"
+  ]
+}

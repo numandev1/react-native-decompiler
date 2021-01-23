@@ -1,0 +1,101 @@
+diff --git a/node_modules/@types/fs-extra/LICENSE b/node_modules/@types/fs-extra/LICENSE
+deleted file mode 100644
+index 9e841e7..0000000
+--- a/node_modules/@types/fs-extra/LICENSE
++++ /dev/null
+@@ -1,21 +0,0 @@
+-    MIT License
+-
+-    Copyright (c) Microsoft Corporation.
+-
+-    Permission is hereby granted, free of charge, to any person obtaining a copy
+-    of this software and associated documentation files (the "Software"), to deal
+-    in the Software without restriction, including without limitation the rights
+-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-    copies of the Software, and to permit persons to whom the Software is
+-    furnished to do so, subject to the following conditions:
+-
+-    The above copyright notice and this permission notice shall be included in all
+-    copies or substantial portions of the Software.
+-
+-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+-    SOFTWARE
+diff --git a/node_modules/@types/fs-extra/README.md b/node_modules/@types/fs-extra/README.md
+deleted file mode 100644
+index 91ab064..0000000
+--- a/node_modules/@types/fs-extra/README.md
++++ /dev/null
+@@ -1,16 +0,0 @@
+-# Installation
+-> `npm install --save @types/fs-extra`
+-
+-# Summary
+-This package contains type definitions for fs-extra (https://github.com/jprichardson/node-fs-extra).
+-
+-# Details
+-Files were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/fs-extra.
+-
+-### Additional Details
+- * Last updated: Tue, 19 May 2020 18:23:53 GMT
+- * Dependencies: [@types/node](https://npmjs.com/package/@types/node)
+- * Global values: none
+-
+-# Credits
+-These definitions were written by [Alan Agius](https://github.com/alan-agius4), [midknight41](https://github.com/midknight41), [Brendan Forster](https://github.com/shiftkey), [Mees van Dijk](https://github.com/mees-), [Justin Rockwood](https://github.com/jrockwood), [Sang Dang](https://github.com/sangdth), [Florian Keller](https://github.com/ffflorian), and [Piotr Błażejewicz](https://github.com/peterblazejewicz).
+diff --git a/node_modules/@types/fs-extra/index.d.ts b/node_modules/@types/fs-extra/index.d.ts
+index 66ac54b..3031e5f 100644
+--- a/node_modules/@types/fs-extra/index.d.ts
++++ b/node_modules/@types/fs-extra/index.d.ts
+@@ -55,15 +55,15 @@ export function outputFile(file: string, data: any, callback: (err: Error) => vo
+ export function outputFile(file: string, data: any, options: WriteFileOptions | string, callback: (err: Error) => void): void;
+ export function outputFileSync(file: string, data: any, options?: WriteFileOptions | string): void;
+ 
+-export function readJson(file: string, options?: ReadOptions): Promise<any>;
+-export function readJson(file: string, callback: (err: Error, jsonObject: any) => void): void;
+-export function readJson(file: string, options: ReadOptions, callback: (err: Error, jsonObject: any) => void): void;
+-export function readJSON(file: string, options?: ReadOptions): Promise<any>;
+-export function readJSON(file: string, callback: (err: Error, jsonObject: any) => void): void;
+-export function readJSON(file: string, options: ReadOptions, callback: (err: Error, jsonObject: any) => void): void;
++export function readJson<T = unknown>(file: string, options?: ReadOptions): Promise<T>;
++export function readJson<T = unknown>(file: string, callback: (err: Error, jsonObject: T) => void): void;
++export function readJson<T = unknown>(file: string, options: ReadOptions, callback: (err: Error, jsonObject: T) => void): void;
++export function readJSON<T = unknown>(file: string, options?: ReadOptions): Promise<T>;
++export function readJSON<T = unknown>(file: string, callback: (err: Error, jsonObject: T) => void): void;
++export function readJSON<T = unknown>(file: string, options: ReadOptions, callback: (err: Error, jsonObject: T) => void): void;
+ 
+-export function readJsonSync(file: string, options?: ReadOptions): any;
+-export function readJSONSync(file: string, options?: ReadOptions): any;
++export function readJsonSync<T = unknown>(file: string, options?: ReadOptions): T;
++export function readJSONSync<T = unknown>(file: string, options?: ReadOptions): T;
+ 
+ export function remove(dir: string): Promise<void>;
+ export function remove(dir: string, callback: (err: Error) => void): void;
+@@ -78,15 +78,15 @@ export function outputJson(file: string, data: any, callback: (err: Error) => vo
+ export function outputJsonSync(file: string, data: any, options?: WriteOptions): void;
+ export function outputJSONSync(file: string, data: any, options?: WriteOptions): void;
+ 
+-export function writeJSON(file: string, object: any, options?: WriteOptions): Promise<void>;
+-export function writeJSON(file: string, object: any, callback: (err: Error) => void): void;
+-export function writeJSON(file: string, object: any, options: WriteOptions, callback: (err: Error) => void): void;
+-export function writeJson(file: string, object: any, options?: WriteOptions): Promise<void>;
+-export function writeJson(file: string, object: any, callback: (err: Error) => void): void;
+-export function writeJson(file: string, object: any, options: WriteOptions, callback: (err: Error) => void): void;
++export function writeJSON<T = unknown>(file: string, object: T, options?: WriteOptions): Promise<void>;
++export function writeJSON<T = unknown>(file: string, object: T, callback: (err: Error) => void): void;
++export function writeJSON<T = unknown>(file: string, object: T, options: WriteOptions, callback: (err: Error) => void): void;
++export function writeJson<T = unknown>(file: string, object: T, options?: WriteOptions): Promise<void>;
++export function writeJson<T = unknown>(file: string, object: T, callback: (err: Error) => void): void;
++export function writeJson<T = unknown>(file: string, object: T, options: WriteOptions, callback: (err: Error) => void): void;
+ 
+-export function writeJsonSync(file: string, object: any, options?: WriteOptions): void;
+-export function writeJSONSync(file: string, object: any, options?: WriteOptions): void;
++export function writeJsonSync<T = unknown>(file: string, object: T, options?: WriteOptions): void;
++export function writeJSONSync<T = unknown>(file: string, object: T, options?: WriteOptions): void;
+ 
+ export function ensureFile(path: string): Promise<void>;
+ export function ensureFile(path: string, callback: (err: Error) => void): void;

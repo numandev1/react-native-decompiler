@@ -1,0 +1,12 @@
+diff --git a/node_modules/@babel/types/lib/index.d.ts b/node_modules/@babel/types/lib/index.d.ts
+index ab4efc3..a6ec1d2 100644
+--- a/node_modules/@babel/types/lib/index.d.ts
++++ b/node_modules/@babel/types/lib/index.d.ts
+@@ -1395,6 +1395,7 @@ declare type TSBaseType = TSAnyKeyword | TSBooleanKeyword | TSBigIntKeyword | TS
+ interface Aliases {
+     Expression: Expression;
+     Binary: Binary;
++    Scope: Node;
+     Scopable: Scopable;
+     BlockParent: BlockParent;
+     Block: Block;
