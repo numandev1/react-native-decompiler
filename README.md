@@ -2,7 +2,7 @@
 
 <!-- Title -->
 <p align="center">
-<img src="/media/decompileIcon.png" alt="alt text" width="150"/>
+<img src="https://github.com/nomi9995/react-native-decompiler/blob/master/media/decompileIcon.png" alt="alt text" width="150"/>
 </p>
 
 **DOES NOT SUPPORT ENCRYPTED/BINARY (FACEBOOK, INSTAGRAM) BUNDLES**
