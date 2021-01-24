@@ -1,4 +1,5 @@
 # React Native Decompiler [ALPHA]
+A CLI for React Native that allows you to decompile JS code of Android and IOS.
 
 <!-- Title -->
 <p align="center">
@@ -35,9 +36,11 @@ rnd
 # Usage
 Example 1: `npx react-native-decompiler -i ./index.android.bundle -o ./output`
 
-Example 2: `react-native-decompiler -i ./index.android.bundle -o ./output`
+Example 2: `npx react-native-decompiler -i ./main.jsbundle -o ./output`
 
-Example 3: `rnd -i ./index.android.bundle -o ./output`
+Example 3: `react-native-decompiler -i ./index.android.bundle -o ./output`
+
+Example 4: `rnd -i ./index.android.bundle -o ./output`
 
 Command params:
 - `-i` (required) - input file/folder
@@ -54,6 +57,7 @@ Command params:
 - `--noProgress` - don't show progress bar
 - `--debug` - when also given a module ID, will print out that modules code after any plugin handles the app.
 
+# Android
 ## Extract index.android.bundle from APK
 
 ### installation of apktool
@@ -81,11 +85,22 @@ apktool  d /pathOfApkFile.apk
 After that you will get `index.android.bundle` file at `pathOfApkFile/assets/index.android.bundle`
 
 than you can use `react-native-decompiler` for decompile `index.android.bundle` file
+# IOS
+## Extract main.jsbundle from IPA
+you can unzip `ipa` by unzip command on terminal
+```sh
+$ unzip AppName.ipa
+```
+after unzip, you will get `Playload` folder, then you have to copy `main.jsbundle` file. there are two ways to copy this file as follow below
+1- run this command `cp ./Payload/AppName.app/main.jsbundle ./` to get get `main.jsbundle` file
+2- Go to `Payload` folder and right click on `AppName.app` and choose `Show Package Contents` then you will find `main.jsbundle` file at root. you can copy this file to any location
+
+after getting `main.jsbundle` you can use `react-native-decompiler` for decompile `main.jsbundle` file
 
 ## Valid inputs
 
 The following input formats are currently supported:
-- A single `index.android.bundle` file that contains all modules (most cases for React Native)
+- A single `index.android.bundle`/`main.jsbundle` file that contains all modules (most cases for React Native)
 - A folder containing React Native modules (usually called `js-modules`) in "unbundled" apps
 - A single Webpack entrypoint bundle file (entrypoint bundles begin with `!function(e)`, chunked bundles start with `window.webpackJsonp`)
 - A folder containg Webpack chunks, where at least one file is the entrypoint
@@ -108,9 +123,6 @@ Guidelines:
 
 * When doing any modifications to the AST, use the NodePath methods.
 * When you are only doing reading, directly reading from `.node` is acceptable.
-
-## Upcoming
-unzip and decompile `ipa` file :stuck_out_tongue_winking_eye:
 
 <!-- Footer -->
 
