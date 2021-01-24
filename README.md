@@ -91,9 +91,12 @@ you can unzip `ipa` by unzip command on terminal
 ```sh
 $ unzip AppName.ipa
 ```
-after unzip, you will get `Playload` folder, then you have to copy `main.jsbundle` file. there are two ways to copy this file as follow below
-1- run this command `cp ./Payload/AppName.app/main.jsbundle ./` to get get `main.jsbundle` file
-2- Go to `Payload` folder and right click on `AppName.app` and choose `Show Package Contents` then you will find `main.jsbundle` file at root. you can copy this file to any location
+after unzip, you will get `Playload` folder, then you have to copy `main.jsbundle` file.
+there are two ways to copy this file as follow below
+
+1. run this command `cp ./Payload/AppName.app/main.jsbundle ./` to get get `main.jsbundle` file
+
+2. Go to `Payload` folder and right click on `AppName.app` and choose `Show Package Contents` then you will find `main.jsbundle` file at root. you can copy this file to any location
 
 after getting `main.jsbundle` you can use `react-native-decompiler` for decompile `main.jsbundle` file
 
