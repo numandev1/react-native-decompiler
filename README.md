@@ -142,6 +142,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://github.com/richardfuca"><img src="https://avatars.githubusercontent.com/u/10174185?v=4" width="100px;" alt=""/><br /><sub><b>Richard</b></sub></a><br /><a href="https://github.com/richardfuca/react-native-decompiler/commits?author=richardfuca" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/nomi9995"><img src="https://avatars2.githubusercontent.com/u/36044436?v=4" width="100px;" alt=""/><br /><sub><b>Numan</b></sub></a><br /><a href="https://github.com/nomi9995/react-native-decompiler/commits?author=nomi9995" title="Code">💻</a></td>
   </tr>
 </table>
