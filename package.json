@@ -1,6 +1,6 @@
 {
   "name": "react-native-decompiler",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "react native decompile apk and ipa(soon)",
   "main": "./out/index.js",
   "author": "richardfuca",
@@ -16,7 +16,7 @@
     "build": "tsc",
     "start": "npm i && ts-node ./src/main.ts",
     "lint": "eslint ./src",
-    "postinstall": "patch-package"
+    "postinstall_": "patch-package"
   },
   "dependencies": {
     "@babel/generator": "7.12.11",
