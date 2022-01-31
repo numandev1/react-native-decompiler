@@ -57,7 +57,7 @@ export abstract class Plugin {
 
   protected debugLog(...args: unknown[]): void {
     if (args.length === 0) throw new Error('no args');
-    debug(this.getDebugName())(...args);
+    debug(this.getDebugName())({ ...args });
   }
 
   /**

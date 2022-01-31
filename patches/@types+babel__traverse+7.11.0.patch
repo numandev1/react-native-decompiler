@@ -1,5 +1,5 @@
 diff --git a/node_modules/@types/babel__traverse/index.d.ts b/node_modules/@types/babel__traverse/index.d.ts
-index 827bae1..1101116 100644
+index ab63f9d..11bed48 100644
 --- a/node_modules/@types/babel__traverse/index.d.ts
 +++ b/node_modules/@types/babel__traverse/index.d.ts
 @@ -108,6 +108,8 @@ export class Scope {
@@ -11,7 +11,16 @@ index 827bae1..1101116 100644
      rename(oldName: string, newName?: string, block?: Node): void;
  
      dump(): void;
-@@ -529,6 +531,8 @@ export class NodePath<T = Node> {
+@@ -120,7 +122,7 @@ export class Scope {
+ 
+     registerConstantViolation(path: NodePath): void;
+ 
+-    registerBinding(kind: string, path: NodePath, bindingPath?: NodePath): void;
++    registerBinding<T>(kind: string, path: NodePath<T>, bindingPath?: NodePath<T>): void;
+ 
+     addGlobal(node: Node): void;
+ 
+@@ -538,6 +540,8 @@ export class NodePath<T = Node> {
      getCompletionRecords(): NodePath[];
  
      getSibling(key: string | number): NodePath;
@@ -20,7 +29,7 @@ index 827bae1..1101116 100644
      getAllPrevSiblings(): NodePath[];
      getAllNextSiblings(): NodePath[];
  
-@@ -540,7 +544,7 @@ export class NodePath<T = Node> {
+@@ -549,7 +553,7 @@ export class NodePath<T = Node> {
          : T[K] extends Node | null | undefined
          ? NodePath<T[K]>
          : never;

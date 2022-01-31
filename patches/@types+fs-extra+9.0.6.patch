@@ -27,7 +27,7 @@ index 9e841e7..0000000
 -    SOFTWARE
 diff --git a/node_modules/@types/fs-extra/README.md b/node_modules/@types/fs-extra/README.md
 deleted file mode 100644
-index 91ab064..0000000
+index 8dc3274..0000000
 --- a/node_modules/@types/fs-extra/README.md
 +++ /dev/null
 @@ -1,16 +0,0 @@
@@ -41,17 +41,17 @@ index 91ab064..0000000
 -Files were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/fs-extra.
 -
 -### Additional Details
-- * Last updated: Tue, 19 May 2020 18:23:53 GMT
+- * Last updated: Wed, 23 Dec 2020 21:09:59 GMT
 - * Dependencies: [@types/node](https://npmjs.com/package/@types/node)
 - * Global values: none
 -
 -# Credits
--These definitions were written by [Alan Agius](https://github.com/alan-agius4), [midknight41](https://github.com/midknight41), [Brendan Forster](https://github.com/shiftkey), [Mees van Dijk](https://github.com/mees-), [Justin Rockwood](https://github.com/jrockwood), [Sang Dang](https://github.com/sangdth), [Florian Keller](https://github.com/ffflorian), and [Piotr Błażejewicz](https://github.com/peterblazejewicz).
+-These definitions were written by [Alan Agius](https://github.com/alan-agius4), [midknight41](https://github.com/midknight41), [Brendan Forster](https://github.com/shiftkey), [Mees van Dijk](https://github.com/mees-), [Justin Rockwood](https://github.com/jrockwood), [Sang Dang](https://github.com/sangdth), [Florian Keller](https://github.com/ffflorian), [Piotr Błażejewicz](https://github.com/peterblazejewicz), and [Tiger Oakes](https://github.com/NotWoods).
 diff --git a/node_modules/@types/fs-extra/index.d.ts b/node_modules/@types/fs-extra/index.d.ts
-index 66ac54b..3031e5f 100644
+index e253b7f..878ec3f 100644
 --- a/node_modules/@types/fs-extra/index.d.ts
 +++ b/node_modules/@types/fs-extra/index.d.ts
-@@ -55,15 +55,15 @@ export function outputFile(file: string, data: any, callback: (err: Error) => vo
+@@ -58,15 +58,15 @@ export function outputFile(file: string, data: any, callback: (err: Error) => vo
  export function outputFile(file: string, data: any, options: WriteFileOptions | string, callback: (err: Error) => void): void;
  export function outputFileSync(file: string, data: any, options?: WriteFileOptions | string): void;
  
@@ -75,7 +75,7 @@ index 66ac54b..3031e5f 100644
  
  export function remove(dir: string): Promise<void>;
  export function remove(dir: string, callback: (err: Error) => void): void;
-@@ -78,15 +78,15 @@ export function outputJson(file: string, data: any, callback: (err: Error) => vo
+@@ -81,15 +81,15 @@ export function outputJson(file: string, data: any, callback: (err: Error) => vo
  export function outputJsonSync(file: string, data: any, options?: WriteOptions): void;
  export function outputJSONSync(file: string, data: any, options?: WriteOptions): void;
  
