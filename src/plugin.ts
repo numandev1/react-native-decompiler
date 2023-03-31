@@ -55,9 +55,8 @@ export abstract class Plugin {
     return `react-native-decompiler:${this.name ?? 'plugin'}-${this.module.moduleId}`;
   }
 
-  protected debugLog(...args: unknown[]): void {
-    if (args.length === 0) throw new Error('no args');
-    debug(this.getDebugName())({ ...args });
+  protected debugLog(formatter: unknown, ...args: unknown[]): void {
+    debug(this.getDebugName())(formatter, ...args);
   }
 
   /**
@@ -153,7 +152,7 @@ export abstract class Plugin {
    * @param from The name of the variable to be removed
    * @param to The name of the variable to merge into
    */
-  protected mergeBindings(path: NodePath, from: string, to: string): void {
+  protected mergeBindings<T>(path: NodePath<T>, from: string, to: string): void {
     const oldBinding = path.scope.bindings[to];
     path.scope.rename(from, to);
     path.remove();

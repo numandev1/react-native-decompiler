@@ -35,7 +35,9 @@ export default class ReactNativeSingleParser extends PerformanceTracker implemen
     try {
       const file = await fs.readFile(args.in, 'utf8');
 
-      return file.includes('__d(function(g,r,i,a,m,e,d)');
+      return /__d\(function\([a-z],[a-z],[a-z],[a-z],[a-z],[a-z],[a-z]\)/.test(file)
+        || /__d\(function\([a-z],[a-z],[a-z],[a-z],[a-z],[a-z]\)/.test(file)
+        || /__d\(function\([a-z],[a-z],[a-z],[a-z],[a-z]\)/.test(file);
     } catch (e) {
       return false;
     }

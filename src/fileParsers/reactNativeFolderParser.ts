@@ -38,7 +38,12 @@ export default class ReactNativeFolderParser extends PerformanceTracker implemen
     try {
       const fileNames = await fs.readdir(args.in);
 
-      return fileNames.some((fileName) => fs.readFileSync(path.join(args.in, fileName), 'utf8').includes('__d(function(g,r,i,a,m,e,d)'));
+      return fileNames.some((fileName) => {
+        const file = fs.readFileSync(path.join(args.in, fileName), 'utf8');
+        return /__d\(function\([a-z],[a-z],[a-z],[a-z],[a-z],[a-z],[a-z]\)/.test(file)
+          || /__d\(function\([a-z],[a-z],[a-z],[a-z],[a-z],[a-z]\)/.test(file)
+          || /__d\(function\([a-z],[a-z],[a-z],[a-z],[a-z]\)/.test(file);
+      });
     } catch (e) {
       return false;
     }

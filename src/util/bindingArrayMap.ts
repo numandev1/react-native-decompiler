@@ -65,7 +65,7 @@ export default class BindingArrayMap<V> implements Map<Binding, V[]> {
   delete(_key: Binding): boolean {
     throw new Error('Method not implemented.');
   }
-  forEach(_callbackfn: (value: V[], key: Binding, map: Map<Binding, V[]>) => void, _thisArg?: any): void {
+  forEach(_callbackfn: (value: V[], key: Binding, map: Map<Binding, V[]>) => void, _thisArg?: unknown): void {
     throw new Error('Method not implemented.');
   }
   has(_key: Binding): boolean {

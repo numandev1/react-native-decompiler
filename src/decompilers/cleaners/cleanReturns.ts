@@ -30,7 +30,7 @@ export default class CleanReturns extends Plugin {
           path.insertBefore(path.node.argument);
           path.get('argument').replaceWith(path.node.argument.left);
         }
-      }
+      },
     };
   }
 }

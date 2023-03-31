@@ -92,6 +92,11 @@ async function start() {
 
     fsExtra.ensureDirSync(argValues.out);
 
+    if (!fsExtra.existsSync(argValues.in)) {
+      console.error(`${chalk.red('[!]')} "${argValues.in}" does not exist!"`);
+      process.exit(1);
+    }
+
     console.log('Reading file...');
 
     const fileParserRouter = new FileParserRouter();
@@ -101,8 +106,9 @@ async function start() {
       console.error(`${chalk.red('[!]')} No modules were found!`);
       console.error(`${chalk.red('[!]')} Possible reasons:`);
       console.error(`${chalk.red('[!]')} - The React Native app is unbundled. If it is, export the "js-modules" folder from the app and provide it as the --js-modules argument`);
-      console.error(`${chalk.red('[!]')} - The bundle is a binary/encrypted file (ex. Facebook, Instagram). These files are not supported`);
+      console.error(`${chalk.red('[!]')} - The bundle is a Hermes/binary file (ex. Facebook, Instagram). These files are not supported`);
       console.error(`${chalk.red('[!]')} - The provided Webpack bundle input is not or does not contain the entrypoint bundle`);
+      console.error(`${chalk.red('[!]')} - The provided Webpack bundle was built from V5, which is not supported`);
       console.error(`${chalk.red('[!]')} - The file provided is not a React Native or Webpack bundle.`);
       process.exit(1);
     }
